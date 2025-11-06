@@ -1,2 +1,14 @@
 <h1>Videojuegos disponibles</h1>
 <img src="/img/Knight games.png" alt="Knight Games" />
+
+<section class="productos">
+    @for(producto of productos; track producto.id) {
+        <article class="producto">
+            <img [src]="'/img/' + producto.imagen" [alt]="producto.nombre" />
+            <h3>{{producto.nombre}}</h3>
+            <p>{{producto.descripcion}}</p>
+            <strong>Precio: ${{producto.precio}}</strong>
+            <button (click)="agregarAlCarrito(producto)">Agregar al carrito</button>
+        </article>
+    }
+</section>
